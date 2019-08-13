@@ -1,16 +1,16 @@
 const Person = require('../models/Person');
 
 module.exports = {
-    async createNewNote(req, res){
-        const { note } = req.body;
-        const id = req.params.id;
+  async createNewNote(req, res) {
+    const { notes } = req.body;
+    const id = req.params.id;
 
-        const person = await Person.findByIdAndUpdate(
-            { _id: id },
-            { $push: { notes: note } },
-            { new: true }
-        );
+    const person = await Person.findByIdAndUpdate(
+      { _id: id },
+      { $set: { notes: notes } },
+      { new: true }
+    );
 
-        return res.json(person);
-    },
+    return res.json(person);
+  },
 }

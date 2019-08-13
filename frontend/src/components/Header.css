@@ -1,0 +1,20 @@
+.main-header {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1.5px solid #dd8043;
+  background-color: #d25734;
+  padding: 15px;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+  color: #fafafa;
+  align-items: center;
+}
+
+.add {
+  width: 24px;
+}

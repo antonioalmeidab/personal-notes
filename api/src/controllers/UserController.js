@@ -31,7 +31,7 @@ module.exports = {
 
         else user = await User.findByIdAndUpdate(
             { _id: id},
-            { password: newPassword},
+            { $set: { password: newPassword } },
             { new: true}
         );
         
