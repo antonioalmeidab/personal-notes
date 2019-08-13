@@ -1,6 +1,6 @@
 .details {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   height: 85vh;
   align-items: center;
   margin-top: 10px;
@@ -12,6 +12,7 @@
   align-items: center;
   border: 1px solid rgb(146, 146, 146);
   border-radius: 7px;
+  margin-right: 50px;
   height: 70vh;
   padding: 30px;
   width: 300px;

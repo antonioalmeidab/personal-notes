@@ -18,6 +18,6 @@ routes.get('/users', UserController.listUsers);
 routes.put('/users/:id/passwordReset', upload.none(), UserController.passwordReset);
 
 routes.post('/authentication', upload.none(), Authentication.authenticate);
-routes.get('/authentication/:username/forgotPassword', Authentication.getSafeQuestion);
+routes.get('/authentication/:username/forgotPassword', Authentication.getPasswordTip);
 
 module.exports = routes;

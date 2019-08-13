@@ -13,7 +13,6 @@ class List extends Component {
   state = {
     list: [],
     search: '',
-    searchOption: "name"
   };
 
   async componentDidMount() {

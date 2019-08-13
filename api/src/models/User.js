@@ -11,8 +11,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    safeQuestion: String,
-    safeAnswer: String
+    passwordTip: String
 });
 
 module.exports = mongoose.model ('User', userSchema);

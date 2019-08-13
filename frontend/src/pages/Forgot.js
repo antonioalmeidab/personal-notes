@@ -8,8 +8,8 @@ import './styles/Login.css';
 class Login extends Component {
   state = {
     username: '',
-    password: '',
     errorMessage: '',
+    tip: '',
   };
 
   handleChange = e => {
@@ -19,18 +19,12 @@ class Login extends Component {
   handleSubmit = async e => {
     e.preventDefault();
 
-    const data = new FormData();
-
-    data.append('candidateUser', this.state.username);
-    data.append('candidatePassword', this.state.password);
-
     try{
-      await api.post('authentication', data);
-
-      this.props.history.push('/list');
-  
+      const response = await api.get(`authentication/${this.state.username}/forgotPassword`);
+      this.setState({ tip: `Dica: ${response.data.passwordTip}`})
+      this.setState({ errorMessage: '' })
     } catch(err) {
-      this.setState( { errorMessage: 'Usuário ou senha inválidos!' } )
+      this.setState( { errorMessage: 'Usuário inválido!' } )
     }
   }
 
@@ -45,19 +39,11 @@ class Login extends Component {
               onChange={this.handleChange}
               value={this.state.username}
             />
-
-            <input
-              type="password"
-              name="password"
-              placeholder="Senha"
-              onChange={this.handleChange}
-              value={this.state.password}
-            />
-
+            <p>{this.state.tip}</p>
             <p className="error" >{this.state.errorMessage}</p>
 
-            <Link className="forgot" to="/">Esqueci a senha</Link>
-            <button type="submit"></button>
+            <button type="submit">Receber dica</button>
+            <Link className="forgot" to="/">Voltar</Link>
 
           </form>
       </div>

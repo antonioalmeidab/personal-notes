@@ -28,6 +28,8 @@ class Login extends Component {
     try{
       await api.post('authentication', data);
 
+      localStorage.setItem('authenticated', true);
+
       this.props.history.push('/list');
   
     } catch(err) {

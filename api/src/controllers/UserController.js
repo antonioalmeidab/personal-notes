@@ -9,13 +9,12 @@ module.exports = {
     },
 
     async createNewUser(req, res) {
-        const { username, password, safeQuestion, safeAnswer } = req.body;
+        const { username, password, passwordTip } = req.body;
     
         const user = await User.create({
             username,
             password,
-            safeQuestion,
-            safeAnswer
+            passwordTip
         });
 
         return res.json(user);

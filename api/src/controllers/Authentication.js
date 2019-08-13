@@ -14,14 +14,14 @@ module.exports = {
     });
   },
 
-  async getSafeQuestion(req, res) {
+  async getPasswordTip(req, res) {
     const candidateUsername = req.params.username;
 
     await User.findOne({ 'username': candidateUsername }, function (err, user) {
       try {
         if (err) throw err;
 
-        return res.json({ id: user.id, safeQuestion: user.safeQuestion });
+        return res.json({ passwordTip: user.passwordTip });
 
       } catch (err) {
         return res.status(401).send("Invalid username!");
