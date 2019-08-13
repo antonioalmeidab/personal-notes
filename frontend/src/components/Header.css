@@ -1,0 +1,19 @@
+.main-header {
+  display: flex;
+  justify-content: center;
+  background-color: #d25734;
+  padding: 15px 2px;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+  color: #fafafa;
+  align-items: center;
+}
+
+.add {
+  width: 24px;
+}
